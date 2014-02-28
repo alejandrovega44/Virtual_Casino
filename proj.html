@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+	
+	
+	<head> </head>
+
+	<script type = "text/javascript">
+	<!-- myfunction acts as an action listner, once location is clicked, message pops-up-->
+		function myFunction()
+		{
+			alert("Success!");
+		}
+	</script>
+	<!--Made image into the background, so we can now place things on top of it-->
+	<style>
+
+		body
+		{
+			padding:0;
+			margin:0;
+			background: url("http://fc01.deviantart.net/fs39/i/2008/329/4/e/Red_and_Gold_Damask_Wallpaper_by_MT_Schorsch.jpg");
+			overflow:scroll;
+		}
+		
+		#user_menu
+		{
+			float:right;
+			padding:0;
+			margin:0;
+		}
+		
+		#user_menu ul
+		{
+			padding:0;
+			margin:0;
+			line-height:30px;
+		}
+		
+		#user_menu li
+		{
+			position:relative;
+			float:right;
+			list-style:none;
+			border:radius:5px;
+		}
+		
+		#user_menu ul ul
+		{
+			position:absolute;
+			visibility:hidden;
+			padding:0;
+			margin:0;
+			top:30px;
+		}
+		
+		#user_menu ul li a
+		{
+			text-align:center;
+			font:"Arial Black", Arial;
+			font-size:24px;
+			color:rgba(255,255,255,9);
+			width:150px;
+			height:30px;
+			display:block;
+			text-decoration:none;
+		}
+		
+		#user_menu ul li:hover
+		{
+			background-color:rgba(128,128,128,1);
+			text-decoration:none;
+		}
+		
+		#user_menu ul li:hover ul
+		{
+			visibility:visible;
+			z-index:1;
+		}
+		#user_menu ul li:hover ul li a
+		{
+			background:rgba(0,0,0,9);
+			z-index:1;
+			border-bottom:1px solid rgba(160,160,164,1);
+			opacity:0.9;
+			text-decoration:none;
+			border-radius:5px;
+		}
+		
+		#user_menu ul li ul li:hover
+		{
+			background:rgba(128,128,128,1);
+			opacity:0.8;
+			text-decoration:underline;
+		}
+		
+	</style>
+
+	<body>
+		<!--div is basically a container--> 
+		
+		<IMG id = "slot_machine" src = "http://www.martinfrost.ws/htmlfiles/2014files/scotnews2014/slots.gif" 
+			style = "positition:absolute; right:150px;" border = "0" height = "10%" width = "10%">
+			
+			<div id = "user_menu"> 	
+				<ul> <li> <a href = "#Name"> Welcome </a></li> </ul>
+				 <ul> 
+					 <li> <a href = "#Account"> Name Here </a> 
+					   <ul>
+						  <li> <a href = "#Money"> Balance </a> </li>
+						  <li> <a href = "#Stats"> Game Stats </a> </li> 
+						  <li> <a href = "#Stats">  Info </a> </li> 
+						  <li> <a href = "#Stats">  Blah </a> </li> 
+						  <li> <a href = "#Stats">  etc. </a> </li> 
+						</ul>
+					  </li>
+				 </ul>
+			</div>
+		 
+	</body>
+
+</html>
