@@ -1,0 +1,187 @@
+!DOCTYPE html>
+/*
+	Going with the idea of a app suite UI until we find a good casino UI that we can alter to accommodate the games available
+*/	
+	
+	<head> </head>
+
+	<script type = "text/javascript">
+	
+	</script>
+	<style>
+
+		body
+		{
+			padding:0;
+			margin:0;
+			background: url("http://fc01.deviantart.net/fs39/i/2008/329/4/e/Red_and_Gold_Damask_Wallpaper_by_MT_Schorsch.jpg");
+			overflow:scroll;
+		}
+		#HorseRace 
+		{
+			position:absolute;
+			top:25%;  
+			left:60%;
+			margin:-64px 0 0 -64px;
+		}
+		#Poker 
+		{
+			position:absolute;
+			top:25%;  
+			left:30%;
+			margin:-64px 0 0 -64px;
+		}
+		
+		#PaiGow 
+		{
+			position:absolute;
+			top:60%;  
+			left:15%;
+			margin:-64px 0 0 -64px;
+		}
+		#SportsBet 
+		{
+			position:absolute;
+			top:60%;  
+			left:75%;
+			margin:-64px 0 0 -64px;
+		}
+		#FightSim 
+		{
+			position:absolute;
+			top:60%;  
+			left:45%;
+			margin:-64px 0 0 -64px;
+		}
+		#user_menu
+		{
+			float:right;
+			padding:0;
+			margin:0;
+		}
+		
+		#user_menu ul
+		{
+			padding:0;
+			margin:0;
+			line-height:30px;
+		}
+		
+		#user_menu li
+		{
+			position:relative;
+			float:right;
+			list-style:none;
+			border:radius:5px;
+		}
+		
+		#user_menu ul ul
+		{
+			position:absolute;
+			visibility:hidden;
+			padding:0;
+			margin:0;
+			top:30px;
+		}
+		
+		#user_menu ul li a
+		{
+			text-align:center;
+			font:"Arial Black", Arial;
+			font-size:24px;
+			color:rgba(255,255,255,9);
+			width:150px;
+			height:30px;
+			display:block;
+			text-decoration:none;
+		}
+		
+		#user_menu ul li:hover
+		{
+			background-color:rgba(128,128,128,1);
+			text-decoration:none;
+		}
+		
+		#user_menu ul li:hover ul
+		{
+			visibility:visible;
+			z-index:1;
+		}
+		#user_menu ul li:hover ul li a
+		{
+			background:rgba(0,0,0,9);
+			z-index:1;
+			border-bottom:1px solid rgba(160,160,164,1);
+			opacity:0.9;
+			text-decoration:none;
+			border-radius:5px;
+		}
+		#user_menu ul li ul li:hover
+		{
+			background:rgba(128,128,128,1);
+			opacity:0.8;
+			text-decoration:underline;
+		}
+		
+	</style>
+
+	<body>
+		<div id = "HorseRace">
+			<a href = "http://grad.sju.edu/Portals/172424/images/coming-soon.jpg" TITLE = "Title of Game Goes Here: 		
+Test your luck and bet on a horse">
+				<IMG id = "horseRaceIMG" src = "http://a1.mzstatic.com/us/r30/Purple4/v4/1a/6f/73/1a6f73cb-c45e-25b9-b8a4-ae273697ca18/icon_256.png" 
+				border = "0" heigth = "67%" width = "67%">
+			</a>
+		</div>
+		
+		<div id = "Poker">
+			<a href = "http://grad.sju.edu/Portals/172424/images/coming-soon.jpg" TITLE = "Title of Game Goes Here:
+Play a traditional game of poker">
+				<IMG id = "PokerIMG" src = "http://www.appslooking.com/wp-content/uploads/2013/03/PokerTower_icon-175x170.png" 
+				  border = "0" >
+			</a>
+		</div>
+		
+		<div id = "PaiGow">
+			<a href = "http://grad.sju.edu/Portals/172424/images/coming-soon.jpg"TITLE = "Title of Game Goes Here:
+Play a traditional game of PaiGow" >
+				<IMG id = "PaiGowIMG" src = "http://a2.mzstatic.com/us/r30/Purple/v4/d2/11/a4/d211a4a4-40a9-94c4-d65f-1837ab93e23e/icon_256.png" 
+				border = "0" height = "68%" width = "68%">
+			</a>
+		</div>
+		
+		<div id = "FightSim">
+			<a href = "http://grad.sju.edu/Portals/172424/images/coming-soon.jpg" TITLE = "Title of Game Goes Here:
+Bet on a Fighter">
+				<IMG id = "FightSimIMG" src = "http://a1.mzstatic.com/us/r30/Purple/v4/92/e4/09/92e409da-564e-f8e2-1409-8907a20dc3f7/icon_256.png" 
+				 border = "0" height = "67%" width = "67%" >
+			</a>
+		</div>
+		
+		<div id = "SportsBet" TITLE = "Title of Game Goes Here:
+Chose from a variety of sports to bet on">
+			<a href = "http://grad.sju.edu/Portals/172424/images/coming-soon.jpg">
+				<IMG id = "SportsBetIMG" src = "http://m.betway.com/images/sports/lp/app/appicon.png" 
+				 border = "0" heigth = "85%" width = "85%" >
+			</a>
+		</div>
+	
+			
+			<div id = "user_menu"> 	
+				<ul> <li> <a href = "#Name"> Welcome </a></li> </ul>
+				 <ul> 
+					 <li> <a href = "#Account"> Name Here </a> 
+					    <ul>
+						  <li> <a href = "http://grad.sju.edu/Portals/172424/images/coming-soon.jpg"> Balance </a> </li>
+						  <li> <a href = "http://grad.sju.edu/Portals/172424/images/coming-soon.jpg"> Game Stats </a> </li> 
+						  <li> <a href = "http://grad.sju.edu/Portals/172424/images/coming-soon.jpg">  Info </a> </li> 
+						  <li> <a href = "http://grad.sju.edu/Portals/172424/images/coming-soon.jpg">  Achievements </a> </li> 
+						  
+						</ul>
+					  </li>
+				 </ul>
+			</div>
+		 
+	</body>
+
+</html>
