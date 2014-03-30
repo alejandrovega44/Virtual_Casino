@@ -1,0 +1,183 @@
+<html>
+<head>
+<script type="text/javascript">
+   GLOBAL_AREAS= new Array();
+   GLOBAL_WIDTH=-1;
+   GLOBAL_HEIGHT=-1;
+   GLOBAL_NEW_AREAS= new Array();
+
+   function setglobal(){
+      // place original AREA coordinate strings into a global array, called first time setXY is called
+      var arrayAreas = document.body.getElementsByTagName("AREA");
+      GLOBAL_WIDTH= document.getElementById("IMAGE4").width;   // get original width
+      GLOBAL_HEIGHT= document.getElementById("IMAGE4").height; // get original height
+      for(var i = 0; i < arrayAreas.length; i++) {
+         GLOBAL_AREAS[i]= arrayAreas[i].coords;
+      }
+      document.body.onresize=setXY('IMAGE4',XSIZE(),YSIZE());
+      // alert("GLOBAL_AREAS" + GLOBAL_AREAS );
+   }
+
+   function setXY(elementid,newwidth,newheight){
+      if (GLOBAL_WIDTH == -1 ){
+         setglobal();
+      }
+      document.getElementById(elementid).width=newwidth;
+      document.getElementById(elementid).height=newheight;
+      scaleArea();
+   }
+
+   function XSIZE(){ // get browser window.innerWidth , dealing with ie
+     var myWidth = 0;
+     if( typeof( window.innerWidth ) == 'number' ) {
+       //Non-IE
+       myWidth = window.innerWidth;
+     } else if( document.documentElement && ( document.documentElement.clientWidth ) ) {
+       //IE 6+ in 'standards compliant mode'
+       myWidth = document.documentElement.clientWidth;
+     } else if( document.body && ( document.body.clientWidth ) ) {
+       //IE 4 compatible
+       myWidth = document.body.clientWidth;
+     }
+     return myWidth;
+  }
+
+   function YSIZE(){  // get browser window.innerHeight, dealing with ie
+     var myHeight = 0;
+     if( typeof( window.innerHeight ) == 'number' ) {
+       //Non-IE
+       myHeight = window.innerHeight;
+     } else if( document.documentElement && ( document.documentElement.clientHeight ) ) {
+       //IE 6+ in 'standards compliant mode'
+       myHeight = document.documentElement.clientHeight;
+     } else if( document.body && ( document.body.clientHeight ) ) {
+       //IE 4 compatible
+       myHeight = document.body.clientHeight;
+     }
+     return myHeight;
+  }
+
+  function scaleArea() {   // using values stored at load, recalculate new values for the current size
+        var arrayAreas = document.body.getElementsByTagName("AREA");
+	message = ""
+        for(var i = 0; i < arrayAreas.length; i++) {
+           ii=i+1;
+           rescaleX= document.getElementById("IMAGE4").width/GLOBAL_WIDTH ;
+           rescaleY= document.getElementById("IMAGE4").height/GLOBAL_HEIGHT ;
+           sarray=GLOBAL_AREAS[i].split(",");      // convert coordinates to a numeric array assuming comma-delimited values
+           var rarray =new Array();
+           for(var j = 0; j < sarray.length; j += 2) {
+              rarray[j]=parseInt(sarray[j])*rescaleX;  // rescale the values
+              rarray[j]=Math.round(rarray[j]);
+              rarray[j+1]=parseInt(sarray[j+1])*rescaleY;  // rescale the values
+              rarray[j+1]=Math.round(rarray[j+1]);
+           }
+	   message = message + rarray.join(",") + '\n';
+           arrayAreas[i].coords=rarray.join(",");    // put the values back into a string
+           GLOBAL_NEW_AREAS[i]= arrayAreas[i].coords;
+       }
+      // alert(rescaleX + " " + rescaleY + "\n" + GLOBAL_WIDTH + " " + GLOBAL_HEIGHT + "\n" + "GLOBAL_AREAS" + GLOBAL_AREAS +  "\nSCALED AREAS" + message);
+   }
+
+// do something when differents are clicked; could be any ECMAScript function, or simply use URLs instead )
+    function redirectToGittyUp(){
+       window.location.assign("http://www.facebook.com")
+    }
+	
+	function redirectToKittens(){
+       window.location.assign("http://www.google.com")
+    }
+	
+	function redirectToPaiGow(){
+       window.location.assign("http://www.pinterest.com")
+    }
+	
+	function redirectToHorseRace(){
+       window.location.assign("http://www.youtube.com")
+    }
+	
+	function redirectToChattyCard(){
+       window.location.assign("http://www.yahoo.com")
+    }
+	
+</script>
+<script type="text/javascript">
+$(window).bind('resize', function() {
+    // resize the button here
+   setXY('IMAGE4',XSIZE(),YSIZE()); 
+    });
+</script>
+</head>
+<head>
+	<meta charset="utf-8"/>
+	<link href="css/reset.css" rel="stylesheet" type="text/css"/>
+	<link href="css/960.css" rel="stylesheet" type="text/css"/>
+	<link href="css/Main_Menu.css" rel="stylesheet" type="text/css" media="screen"/>
+	<script type="text/javascript" src="js/modernizr-1.6.min.js"></script>
+</head>
+
+<style> 
+body
+{
+	padding:0;
+	margin:0;
+	background: url("Main_lobby.jpg");
+	overflow:scroll;
+}
+.img
+{
+	position:absolute;
+	z-index:0;
+	left:0;top:0;
+	width:100%;
+	height:100%;
+}
+</style>
+
+<body onresize="setXY('IMAGE4',XSIZE(),YSIZE());" onmouseover="setXY('IMAGE4',XSIZE(),YSIZE());" *="" chrome="" onload="setXY('IMAGE4',XSIZE(),YSIZE());">
+<div class = "img" >
+	<img id="IMAGE4" src="Main_lobby.jpg" alt="big image map" usemap="#image-maps" height="639" width="1157"/> 
+		<map name="image-maps" id="IMAGE4">
+			<area  title = "Rect1" alt = "Rect1" shape="rect" coords="807,201,917,282" onclick="redirectToGittyUp();">  <!-- GITTY UP -->
+			<area  title = "Rect2" alt = "Rect2" shape="rect" coords="785,382,971,506" onclick="redirectToKittens();"  /> <!-- KITTENS -->
+			<area  title = "Rect3" alt = "Rect3" shape="rect" coords="506,268,656,325" onclick="redirectToPaiGow();"  /> <!-- PAI GOW -->
+			<area  title = "Rect4" alt = "Rect4" shape="rect" coords="209,221,362,295" onclick="redirectToHorseRace();" /> <!-- HORSE RACE -->
+			<area  title = "Rect5" alt = "Rect5" shape="rect" coords="221,353,335,524" onclick="redirectToChattyCard();" />  <!-- CHATTY CARD -->
+		</map>
+</div>
+<div class="container_16">
+		<div class="grid_16">
+		   <ul id="MainMenu">
+		     <li><a href="#">Welcome</a></li>
+			 <li>
+			 <a href="#">Help</a>
+			   <ul class="noJS">
+				 <li><a href="#">About Us</a></li>
+			   </ul>
+			</li>
+			<li>
+			<a href="#">Statistics</a>
+				<ul class="noJS">
+					<li><a href="#">Achievements</a></li>
+					<li><a href="#">Wins/Losses</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Account</a>
+				<ul class="noJS">
+					<li><a href="#">Balance</a></li>
+					<li><a href="#">Add Money</a></li>
+					<li><a href="#">View Info</a></li>
+				</ul>
+			</li>
+		 </ul>
+	   </div>
+</div>
+
+<script type="text/javascript">resizeTo(500,500)</script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+
+</body>
+</html>
