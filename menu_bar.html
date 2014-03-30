@@ -3,97 +3,44 @@
 <body>
 
 <table>
-<!--
-<tr>
-<td colspan="2" style="background-image:url('http://images.sky-map.org/star_image/000/000037.jpeg');width:100%;">
-<h1>Main Title of Web Page</h1>
-</td>
-</tr>-->
 
 <tr>
-<td style="background-color:#FFD700;width:10%">
-<b>Menu</b>
+<td style="background-image:url('file:///C:/Users/Aaron/Documents/GitHub/Virtual_Casino/images/lobby_button.jpg')">
+_______
 </td>
-<td style="background-image:url('E:\CSCE431\bank_box.jpg');height:100%;width:10%;">
- </td>
-<!--
-<tr>
-<td style= "width:40px;">
-<img src= "E:\CSCE431\lobby_button.jpg"; style="height: 10%; width:100%;">
-Menu
+<td style="background-image:url('file:///C:/Users/Aaron/Documents/GitHub/Virtual_Casino/images/empty_space.jpg');width:100%;">
 </td>
-<td>
-<img src= "E:\CSCE431\empty_space.jpg"; style="height: 10%; width:100%;">
-</td>
-<td style= "width:150px;">
-<img src= "E:\CSCE431\text_box.jpg"; style="height: 10%; width:100%;">
-Username
-</td>
-<td style= "width:150px;">
-<img src= "E:\CSCE431\bank_box.jpg"; style="height: 10%; width:100%;">
-Money
-</td>
-</tr>-->
 
-<td style="background-image:url('http://images.sky-map.org/star_image/000/000037.jpeg');height:100%;width:50%;">
-Username</td>
+<td style="background-image:url('file:///C:/Users/Aaron/Documents/GitHub/Virtual_Casino/images/text_box.jpg');width:10%;">
+<p id="name">Username </p></td>
 
-<td style="background-color:#FFD700;height:100%;width:10%;">
-$10000</td>
 
-<!--
-<td background="E:\CSCE431\lobby_button.jpg";style="height:100%;width:100%;">
-Test</td>-->
+
+
+<td style="background-image:url('file:///C:/Users/Aaron/Documents/GitHub/Virtual_Casino/images/bank_box.jpg');width:10%;">
+<p id="money">$100000000000000</p></td>
+
 </tr>
 
-
 </table>
+
+<script>
+function setUsername()
+{
+	// access database to get name
+	var username = '';
+	document.getElementById("name").innerHTML=username;
+}
+
+function setBalance()
+{
+	// access database to get account balance
+	var amount = 0;
+	var balance = '$' + amount;
+	document.getElementById("money").innerHTML=balance;
+}
+</script>
 
 </body>
 </html>
 
-<!--<td onclick="window.location='column.aspd?col=5'">...</td>
-or
-<td onclick="myFunction(this)">...</td>-->
-
-
-
-
-<!--<!DOCTYPE html>
-<html>
-<body>
-
-<table width="500">
-<tr>
-<td colspan="2" style="background-image:url('http://images.sky-map.org/star_image/000/000037.jpeg'); width=100%">
-<h1>Main Title of Web Page</h1>
-</td>
-</tr>
-
-<tr>
-<td style="background-color:#FFD700;width:100px;">
-<b>Menu</b><br>
-HTML<br>
-CSS<br>
-JavaScript
-</td>
-<td style="background-image:url('images/bodybkgrnd-2.gif');height:100px;width:400px;">
-Content goes here</td>
-
-<td style="background-image:url('http://images.sky-map.org/star_image/000/000037.jpeg');height:100px;width:400px;">
-Content 2 goes here</td>
-
-<td style="background-color:#FFD700;height:100px;width:400px;">
-Content 2 goes here</td>
-</tr>
-
-<tr>
-<td colspan="2" style="background-color:#FFA500;text-align:center;">
-Copyright © W3Schools.com</td>
-</tr>
-</table>
-
-</body>
-</html>
-
---> 
